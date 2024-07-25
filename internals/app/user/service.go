@@ -41,7 +41,7 @@ func (s *service) UserAuthentication(ctx context.Context, authorization string) 
 	if err != nil {
 		return fmt.Errorf("failed to get role from token: %w", err)
 	}
-	if roleId != 1 {
+	if roleId != float64(1) {
 		return errors.New("access denied: you do not have the required role to perform this action")
 	}
 	return nil

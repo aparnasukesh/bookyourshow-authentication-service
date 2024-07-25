@@ -3,7 +3,7 @@ module github.com/aparnasukesh/auth-svc
 go 1.21.1
 
 require (
-	github.com/aparnasukesh/inter-communication v1.0.4
+	github.com/aparnasukesh/inter-communication v1.0.7
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/spf13/viper v1.19.0

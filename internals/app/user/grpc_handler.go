@@ -26,7 +26,6 @@ func (h *GrpcHandler) UserAuthRequired(ctx context.Context, req *auth.AuthReques
 			StatusCode: 401,
 		}, err
 	}
-
 	return &auth.AuthResponse{
 		Status:     "user authentication successful",
 		StatusCode: 200,

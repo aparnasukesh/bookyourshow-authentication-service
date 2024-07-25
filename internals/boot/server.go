@@ -21,7 +21,7 @@ func NewGrpcServer(config config.Config, grpcHandler jwt.GrpcHandler, userHandle
 	s := grpc.NewServer()
 	pb.RegisterJWT_TokenServiceServer(s, &grpcHandler)
 	pb.RegisterUserAuthServiceServer(s, &userHandler)
-	pb.RegisterSuperAdminServiceServer(s, &superAdminHandler)
+	pb.RegisterSuperAdminAuthServiceServer(s, &superAdminHandler)
 	pb.RegisterAdminAuthServiceServer(s, &adminHandler)
 	srv := func() error {
 		log.Printf("gRPC server started on port %s", config.GrpcPort)

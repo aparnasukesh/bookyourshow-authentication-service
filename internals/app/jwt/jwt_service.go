@@ -3,7 +3,6 @@ package jwt
 import (
 	"errors"
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/aparnasukesh/auth-svc/pkg/common"
@@ -43,7 +42,7 @@ func (s *service) VerifyJWT(tokenString string) (*jwt.Token, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 		}
-		return []byte(os.Getenv("JWT_secret_key")), nil
+		return []byte(s.jwt_secret_key), nil
 	})
 
 	if err != nil {

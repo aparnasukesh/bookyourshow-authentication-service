@@ -43,7 +43,7 @@ func (s *service) SuperAdminAuthentication(ctx context.Context, authorization st
 		return fmt.Errorf("failed to get role from token: %w", err)
 	}
 
-	if roleId != 3 {
+	if roleId != float64(3) {
 		return errors.New("access denied: you do not have the required role to perform this action")
 	}
 	return nil

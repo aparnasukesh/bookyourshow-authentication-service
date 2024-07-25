@@ -8,7 +8,7 @@ import (
 
 type GrpcHandler struct {
 	svc Service
-	auth.UnimplementedSuperAdminServiceServer
+	auth.UnimplementedSuperAdminAuthServiceServer
 }
 
 func NewGrpcHandler(svc Service) GrpcHandler {
