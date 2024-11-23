@@ -14,7 +14,8 @@ import (
 )
 
 func NewGrpcServer(config config.Config, grpcHandler jwt.GrpcHandler, userHandler user.GrpcHandler, superAdminHandler superadmin.GrpcHandler, adminHandler admin.GrpcHandler) (func() error, error) {
-	lis, err := net.Listen("tcp", ":"+config.GrpcPort)
+	//lis, err := net.Listen("tcp", ":"+config.GrpcPort)
+	lis, err := net.Listen("tcp", "0.0.0.0:"+config.GrpcPort)
 	if err != nil {
 		return nil, err
 	}
