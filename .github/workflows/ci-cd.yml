@@ -64,3 +64,8 @@ jobs:
       - name: Apply Auth Service Kubernetes manifest
         run: |
           kubectl apply -f k8s/auth-svc.yaml
+
+        # Ensure deployment restarts to pick up new image
+      - name: Restart API Gateway Deployment
+        run: |
+          kubectl rollout restart deployment api-gateway 
