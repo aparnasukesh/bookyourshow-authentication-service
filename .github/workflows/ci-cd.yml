@@ -65,7 +65,7 @@ jobs:
         run: |
           kubectl apply -f k8s/auth-svc.yaml
 
-        # Ensure deployment restarts to pick up new image
+      # Ensure deployment restarts to pick up new image
       - name: Restart Auth Service Deployment
         run: |
           kubectl rollout restart deployment auth-svc
