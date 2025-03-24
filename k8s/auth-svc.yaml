@@ -1,7 +1,51 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: auth-svc
+#   labels:
+#     app: auth-svc
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: auth-svc
+#   template:
+#     metadata:
+#       labels:
+#         app: auth-svc
+#     spec:
+#       containers:
+#         - name: auth-svc
+#           image: aparnasukesh/auth-svc:latest
+#           ports:
+#             - containerPort: 5052
+#           resources:
+#             requests:
+#               memory: "128Mi"
+#               cpu: "250m"
+#             limits:
+#               memory: "256Mi"
+#               cpu: "500m"
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: auth-svc
+#   labels:
+#     app: auth-svc
+# spec:
+#   type: ClusterIP
+#   ports:
+#     - port: 5052
+#       targetPort: 5052
+#   selector:
+#     app: auth-svc
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth-svc
+  namespace: bookyourshow
   labels:
     app: auth-svc
 spec:
@@ -31,6 +75,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: auth-svc
+  namespace: bookyourshow
   labels:
     app: auth-svc
 spec:
