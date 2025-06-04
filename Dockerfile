@@ -23,7 +23,7 @@ FROM alpine:latest
 WORKDIR /app
 
 # Install any required packages for running the app (if needed)
-# RUN apk add --no-cache <package_name> 
+# RUN apk add --no-cache <package_name>.
 
 # Copy the Go binary from the builder stage
 COPY --from=builder /app/main .
